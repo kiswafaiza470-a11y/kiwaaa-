@@ -1,0 +1,9 @@
+{
+  "name": "KasKita",
+  "description": "Platform digital untuk mengelola kas kelas secara transparan dan real-time.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

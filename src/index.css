@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #0284c7; /* Sky 600 */
+  --color-primary-dark: #075985; /* Sky 800 */
+  --color-primary-light: #f0f9ff; /* Sky 50 */
+  --color-accent: #38bdf8; /* Sky 400 */
+  
+  --color-glass-white: rgba(255, 255, 255, 0.7);
+  --color-glass-blue: rgba(2, 132, 199, 0.05);
+}
+
+@layer base {
+  body {
+    @apply font-sans text-slate-800 bg-[#f8fbff] antialiased overflow-x-hidden;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(201, 100%, 98%, 1) 0, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(199, 89%, 95%, 1) 0, transparent 50%),
+      radial-gradient(at 50% 100%, hsla(202, 100%, 97%, 1) 0, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_rgba(0,132,199,0.08)] rounded-[2.5rem] transition-all duration-500 hover:shadow-[0_12px_48px_rgba(0,132,199,0.12)];
+  }
+  
+  .glass-sidebar {
+    @apply bg-white/60 backdrop-blur-2xl border-r border-white/20;
+  }
+  
+  .btn-primary {
+    @apply px-7 py-4 bg-primary text-white rounded-2xl font-bold tracking-tight hover:bg-primary-dark transition-all active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30;
+  }
+
+  .input-modern {
+    @apply w-full px-6 py-4 bg-white/50 border border-slate-200/50 backdrop-blur-sm rounded-2xl focus:border-primary/40 focus:bg-white/80 focus:ring-4 focus:ring-primary/5 outline-none transition-all font-semibold text-slate-700 placeholder:text-slate-400;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3.5 px-6 py-4 rounded-2xl font-semibold transition-all relative overflow-hidden;
+  }
+
+  .sidebar-link-active {
+    @apply bg-primary text-white shadow-lg shadow-primary/20 translate-x-1;
+  }
+
+  .sidebar-link-inactive {
+    @apply text-slate-500 hover:bg-primary/5 hover:text-primary;
+  }
+  
+  .stat-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_rgba(0,132,199,0.08)] rounded-[2.5rem] transition-all duration-500 hover:shadow-[0_12px_48px_rgba(0,132,199,0.12)] p-8 relative overflow-hidden;
+  }
+
+  .card-modern {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-xl shadow-slate-200/50 rounded-[2.5rem] transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5;
+  }
+}
